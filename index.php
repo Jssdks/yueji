@@ -1,7 +1,11 @@
 <?php
 
 echo "欢迎来到YUE.已丽人生活馆";
-$dbh = new PDO('mysql:host=mysql;dbname=mysql', 'root', '123456');
-var_dump($dbh);
+try {
+    $pdo = new PDO($dsn, $user, $pass, $options);
+    echo "连接成功";
+} catch (\PDOException $e) {
+    throw new \PDOException($e->getMessage());
+}
 
 ?>
