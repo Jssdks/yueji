@@ -11,7 +11,7 @@ try {
 }
 
 // 执行查询
-    $stmt = $pdo->query('SELECT * FROM some_user');
+    $stmt = $pdo->query('SELECT * FROM user');
     while ($row = $stmt->fetch()) {
         // 处理结果
         print_r($row);
