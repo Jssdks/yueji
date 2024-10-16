@@ -10,7 +10,7 @@ try {
     die("DB连接失败: " . $e->getMessage()."\n");
 }
 
-// 执行查询
+// 开始执行查询
     $stmt = $pdo->query('SELECT * FROM dict_city');
     while ($row = $stmt->fetch()) {
         // 处理结果
