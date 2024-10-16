@@ -2,7 +2,7 @@
 
 echo "欢迎来到YUE.已丽人生活馆\n";
 try {
-    $pdo = new PDO('mysql:host=mysql;dbname=mysql', 'root', '123456');
+    $pdo = new PDO('mysql:host=mysql;dbname=yueji_test', 'root', '123456');
     // 设置 PDO 错误模式为异常
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     echo "DB连接成功\n"; 
@@ -11,7 +11,7 @@ try {
 }
 
 // 执行查询
-    $stmt = $pdo->query('SELECT * FROM user');
+    $stmt = $pdo->query('SELECT * FROM dict_city');
     while ($row = $stmt->fetch()) {
         // 处理结果
         print_r($row);
