@@ -1,6 +1,6 @@
 <?php
 
-echo "欢迎来到YUE.已丽人生活馆\n<br />";
+echo "YUE.已\n<br />";
 try {
 	$pdo = new PDO('mysql:host=mysql;dbname=yueji_test', 'root', '123456');
 	// 设置 PDO 错误模式为异常
@@ -14,10 +14,10 @@ try {
 $stmt = $pdo->query('SELECT * FROM dict_city');
 while ($row = $stmt->fetch()) {
 	// 处理结果
-	print_r($row);
+	echo $row["id"]."_".$row["city_cn"]."<br />";
 	break;
 }
-
+echo "DB读取成功\n<br />";
 $redis = new Redis();
 try {
 	$redis->connect('redis', 6379);
@@ -30,11 +30,13 @@ try {
 
 try {
 	$redis->set("params", time());
+	echo "REDIS写入成功\n<br />";
 } catch (RedisException $e) {
 	die("REDIS写失败: " . $e->getMessage() . "\n<br />");
 }
 try {
 	echo $redis->get("params");
+	echo "REDIS读取成功\n<br />";
 } catch (RedisException $e) {
 	die("REDIS读失败: " . $e->getMessage() . "\n<br />");
 
