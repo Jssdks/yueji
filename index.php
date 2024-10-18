@@ -22,6 +22,7 @@ $redis = new Redis();
 try {
 	$redis->connect('redis', 6379);
 	$redis->auth("k7z9x*t[j=M^5){e");
+	$redis->select(6);
 	echo "REDIS连接成功\n<br />";
 } catch (RedisException $e) {
 	die("REDIS连接失败: " . $e->getMessage() . "\n<br />");
