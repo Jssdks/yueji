@@ -35,7 +35,7 @@ try {
 	die("REDIS写失败: " . $e->getMessage() . "\n<br />");
 }
 try {
-	echo $redis->get("params");
+	echo $redis->get("params")."\n<br />";
 	echo "REDIS读取成功\n<br />";
 } catch (RedisException $e) {
 	die("REDIS读失败: " . $e->getMessage() . "\n<br />");
