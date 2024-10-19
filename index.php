@@ -2,7 +2,7 @@
 
 echo "YUE.已\n<br />";
 try {
-	$pdo = new PDO('mysql:host=mysql;dbname=yueji_test', 'root', '123456');
+	$pdo = new PDO('mysql:host=mysql;port=33080;dbname=yueji_test', 'root', '6NXPqMm9JZgj3UnK');
 	// 设置 PDO 错误模式为异常
 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	echo "DB连接成功\n<br />";
