@@ -1,8 +1,8 @@
 <?php
 
-echo "YUE.已\n<br />";
+echo "yuejiliren.cn\n<br />";
 try {
-	$pdo = new PDO('mysql:host=mysql;dbname=yueji_test', 'root', '6NXPqMm9JZgj3UnK');
+	$pdo = new PDO('mysql:host=mysql;dbname=yueji_test', 'root', getenv('MYSQL_ROOT_PASSWORD'));
 	// 设置 PDO 错误模式为异常
 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	echo "DB连接成功\n<br />";
@@ -21,7 +21,7 @@ echo "DB读取成功\n<br />";
 $redis = new Redis();
 try {
 	$redis->connect('redis', 6379);
-	$redis->auth("k7z9x*t[j=M^5){e");
+	$redis->auth(getenv('REDIS_PASSWORD'));
 	$redis->select(6);
 	echo "REDIS连接成功\n<br />";
 } catch (RedisException $e) {
